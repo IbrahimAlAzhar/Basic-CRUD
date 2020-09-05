@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ object_list }}
+<!--Here object_list means total queryset -->
+{% for instance in object_list %}
+<!--if i change the URL products in urls.py then i have to change in this 'a href' link -->
+<!-- here create a link of every products by use of instance id  -->
+    <p>{{ instance.id }} -<a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a></p>
+<!-- <p>{{ instance.id }}- <a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a>  </p> -->
+{% endfor %}
+
+{% endblock %}

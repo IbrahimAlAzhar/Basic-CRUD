@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Here object_list means total queryset which provides by ClassBased views-->
+{% for instance in object_list %}
+
+<!-- build in class view model creates object_list,so u can easily find out id and title -->
+
+    <p>{{ instance.id }} -<a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a></p>
+<!-- <p>{{ instance.id }}- <a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a>  </p> -->
+{% endfor %}
+
+{% endblock %}

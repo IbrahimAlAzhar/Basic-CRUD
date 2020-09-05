@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ object_list }}
+<!--Here object_list means total queryset -->
+<!--object_list came through context -->
+{% for instance in object_list %}
+
+    <p> {{ instance.id }} - {{ instance.title }} - {{ instance.description }} </p>
+<!-- <p>{{ instance.id }}- <a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a>  </p> -->
+{% endfor %}
+
+{% endblock %}

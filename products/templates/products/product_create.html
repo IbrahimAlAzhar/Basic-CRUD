@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--The basic method of form is GET method,it works when you search something -->
+<!--here if i set form action(method=GET) to google search then it will search in google -->
+<!-- form action method='.' means after working the page is rendering the same page -->
+<!--When we store the values in database we use POST,get means we are getting information -->
+<!--GET means go to this URL -->
+<form action='.' method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }} <!--as paragraph,you can change into as_li or as_ul(unordered list) -->
+    <input type='submit' value='Save'/>
+</form>
+
+<!--
+<form action='.' method='POST'>
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Your title"/>
+    <input type="submit" value="save"/>
+</form>
+
+<form method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save'/>
+</form>
+-->
+{% endblock %}
